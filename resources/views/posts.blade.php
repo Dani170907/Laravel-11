@@ -11,7 +11,7 @@
     </a>
 
     <div class="text-gray-500 text-base">
-        <a href="">{{ $post->author->name }}</a> | {{ $post->created_at->format('j F Y')  }}
+        <a href="/authors/{{ $post->author->id }}" class="hover:underline">{{ $post->author->name }}</a> | {{ $post->created_at->format('j F Y')  }}
     </div>
     <p>{{ Str::limit($post['body']), 150 }}</p>
     <a href="/posts/{{ $post['slug'] }}" class="font-medium text-blue-500 hover:underline">Read more &raquo;</a>
