@@ -14,7 +14,7 @@
         By
         <a href="/authors/{{ $post->author->username }}" class="hover:underline text-gray-500 text-base">{{ $post->author->name }}</a>
         in
-        <a href="" class="hover:underline text-gray-500 text-base">Web Programming</a> |
+        <a href="" class="hover:underline text-gray-500 text-base">{{ $post->category->name }}</a> |
         {{ $post->created_at->format('j F Y')  }},
     </div>
     <p>{{ Str::limit($post['body']), 150 }}</p>
