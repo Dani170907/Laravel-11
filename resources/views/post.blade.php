@@ -7,7 +7,7 @@
     </h2>
 
     <div class="text-gray-500 text-base">
-        <a href="/authors/{{ $post->author->id }}">{{ $post->author->name }}</a> | {{ $post->created_at->diffForHumans() }}
+        <a href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> | {{ $post->created_at->diffForHumans() }}
     </div>
 
     <p>{{ $post['body']}}</p>
