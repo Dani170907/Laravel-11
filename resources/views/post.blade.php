@@ -6,8 +6,12 @@
         {{ $post['title'] }}
     </h2>
 
-    <div class="text-gray-500 text-base">
-        <a href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> | {{ $post->created_at->diffForHumans() }}
+    <div>
+        By
+        <a href="/authors/{{ $post->author->username }}" class="hover:underline text-gray-500 text-base">{{ $post->author->name }}</a>
+        in
+        <a href="/categories/{{ $post->category->slug }}" class="hover:underline text-gray-500 text-base">{{ $post->category->name }}</a> |
+        {{ $post->created_at->diffForHumans() }}
     </div>
 
     <p>{{ $post['body']}}</p>
