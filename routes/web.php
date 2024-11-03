@@ -20,11 +20,15 @@ Route::get('/posts/{post:slug}', function (Post $post) {
 });
 
 Route::get('/authors/{user:username}', function (User $user) {
-    return view('posts', ['title' => count($user->posts) . ' Articles by ' . $user->name, 'posts' => $user -> posts]);
+    $posts = $user->posts->load('category', 'author');
+
+    return view('posts', ['title' => count($posts) . ' Articles by ' . $user->name, 'posts' => $posts]);
 });
 
 Route::get('/categories/{category:slug}', function (Category $category) {
-    return view('posts', ['title' => 'Articles in: ' . $category->name, 'posts' => $category -> posts]);
+    $posts = $category->posts->load('category', 'author');
+
+    return view('posts', ['title' => 'Articles in: ' . $category->name, 'posts' => $posts]);
 });
 
 Route::get('/about', function () {
