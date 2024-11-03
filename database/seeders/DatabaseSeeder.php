@@ -19,14 +19,14 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        // User::factory()->create([
-        //     'name' => 'Dani Ramadhan',
-        //     'username' => 'daniramadhan',
-        //     'email' => 'daniramadhan170907@gmail.com',
-        //     'email_verified_at' => now(),
-        //     'password' => Hash::make('password'),
-        //     'remember_token' => Str::random(10)
-        // ]);
+        $myarticle = User::factory()->create([
+            'name' => 'Dani Ramadhan',
+            'username' => 'daniramadhan',
+            'email' => 'daniramadhan170907@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('password'),
+            'remember_token' => Str::random(10)
+        ]);
 
         // Category::factory()->create([
         //     'name' => 'Web Design',
@@ -43,6 +43,7 @@ class DatabaseSeeder extends Seeder
 
         Post::factory(100)->recycle([
             Category::factory(3)->create(),
+            $myarticle,
             User::factory(5)->create()
         ])->create();
     }
