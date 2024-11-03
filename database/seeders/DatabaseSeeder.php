@@ -32,8 +32,10 @@ class DatabaseSeeder extends Seeder
         //     'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut repellat labore natus. Voluptatum rerum maxime itaque, esse quisquam aspernatur accusamus fuga quasi vero? Non, quisquam? Excepturi itaque possimus fugiat repudiandae?'
         // ]);
 
+        $this->call([CategorySeeder::class, UserSeeder::class]);
         Post::factory(100)->recycle([
-            Category::factory(3)->create(),
+            Category::all(),
+            User::all()
         ])->create();
     }
 }
