@@ -4,25 +4,6 @@
     <div class="py-4 px-4 mx-auto max-w-screen-xl lg:py-4 lg:px-0">
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         @foreach ($posts as $post)
-
-{{-- <article class="py-8 max-w-screen-md border-b border-gray-300">
-    <a href="/posts/{{ $post['slug'] }}" class="hover:underline">
-        <h2 class="mb-1 text-3xl tracking-tight font-bold text-gray-900">
-            {{ $post['title'] }}
-        </h2>
-    </a>
-
-    <div>
-        By
-        <a href="/authors/{{ $post->author->username }}" class="hover:underline text-gray-500 text-base">{{ $post->author->name }}</a>
-        in
-        <a href="/categories/{{ $post->category->slug }}" class="hover:underline text-gray-500 text-base">{{ $post->category->name }}</a> |
-        {{ $post->created_at->diffForHumans() }}
-    </div>
-    <p>{{ Str::limit($post['body']), 150 }}</p>
-    <a href="/posts/{{ $post['slug'] }}" class="font-medium text-blue-500 hover:underline">Read more &raquo;</a>
-</article> --}}
-
             <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                 <div class="flex justify-between items-center mb-5 text-gray-500">
                     <a href="/categories/{{ $post->category->slug }}">

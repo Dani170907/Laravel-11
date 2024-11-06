@@ -37,7 +37,8 @@ export default {
         },
     },
     plugins: [
-        require('flowbite/plugin')
+        require('flowbite/plugin'),
+        require('flowbite-typography')
     ],
     safelist: ['bg-cyan-100', 'bg-green-100', 'bg-blue-100', 'bg-yellow-100','bg-red-100']
 };
