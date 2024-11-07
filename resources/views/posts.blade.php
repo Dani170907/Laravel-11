@@ -1,7 +1,10 @@
 <x-layout>
     <x-slot:title>{{ $title }}</x-slot:title>
+    <x-search></x-search>
 
-    <div class="max-w-screen-xl px-4 mx-auto lg:px-0">
+
+    {{ $posts->links() }}
+    <div class="max-w-screen-xl px-4 py-4 mx-auto my-4 lg:px-0">
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         @forelse ($posts as $post)
             <article class="p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
@@ -42,5 +45,6 @@
         @endforelse
         </div>
     </div>
+    {{ $posts->links() }}
 
 </x-layout>

@@ -1,4 +1,4 @@
-<div class="max-w-screen-xl px-4 pt-8 mx-auto lg:px-6">
+<div class="mb-8">
     <div class="max-w-screen-md mx-auto sm:text-center">
         <form action="/posts">
             @if (request('category'))
