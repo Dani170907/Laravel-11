@@ -3,7 +3,7 @@
 
     <div class="max-w-screen-xl px-4 mx-auto lg:px-0">
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        @foreach ($posts as $post)
+        @forelse ($posts as $post)
             <article class="p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
                 <div class="flex items-center justify-between mb-5 text-gray-500">
                     <a href="/posts?category={{ $post->category->slug }}">
@@ -20,7 +20,7 @@
                 </a>
                 <p class="mb-5 font-light text-gray-500 dark:text-gray-400">{{ Str::limit($post->body, 150) }}</p>
                 <div class="flex items-center justify-between">
-                    <a href="/authors/{{ $post->author->username }}">
+                    <a href="/posts?author={{ $post->author->username }}">
                         <div class="flex items-center space-x-3">
                             <img class="rounded-full w-7 h-7" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="{{ $post->author->name }}" />
                             <span class="text-sm font-medium dark:text-white">
@@ -34,7 +34,8 @@
                     </a>
                 </div>
             </article>
-        @endforeach
+        @empty
+        @endforelse
         </div>
     </div>
 

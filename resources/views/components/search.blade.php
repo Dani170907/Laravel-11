@@ -4,6 +4,9 @@
             @if (request('category'))
                 <input type="hidden" name="category" value="{{ request('category') }}">
             @endif
+            @if (request('author'))
+                <input type="hidden" name="author" value="{{ request('author') }}">
+            @endif
             <div class="items-center max-w-screen-sm mx-auto mb-3 space-y-4 sm:flex sm:space-y-0">
                 <div class="relative w-full">
                     <label for="search" class="hidden mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Search</label>
