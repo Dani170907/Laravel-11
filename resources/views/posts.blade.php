@@ -1,14 +1,12 @@
 <x-layout>
     <x-slot:title>{{ $title }}</x-slot:title>
 
-
-
     <div class="max-w-screen-xl px-4 mx-auto lg:px-0">
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         @foreach ($posts as $post)
             <article class="p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
                 <div class="flex items-center justify-between mb-5 text-gray-500">
-                    <a href="/categories/{{ $post->category->slug }}">
+                    <a href="/posts?category={{ $post->category->slug }}">
                         <span class="bg-{{ $post->category->color }}-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
                             {{ $post->category->name }}
                         </span>

@@ -1,6 +1,9 @@
 <div class="max-w-screen-xl px-4 pt-8 mx-auto lg:px-6">
     <div class="max-w-screen-md mx-auto sm:text-center">
         <form action="/posts">
+            @if (request('category'))
+                <input type="hidden" name="category" value="{{ request('category') }}">
+            @endif
             <div class="items-center max-w-screen-sm mx-auto mb-3 space-y-4 sm:flex sm:space-y-0">
                 <div class="relative w-full">
                     <label for="search" class="hidden mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Search</label>
